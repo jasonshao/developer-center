@@ -61,6 +61,7 @@
 ├─ tests/
 │  ├─ unit/
 │  └─ e2e/
+├─ config/
 ├─ docs/
 │  ├─ sqb/           # 业务资料文档归档
 │  └─ superpowers/   # 设计与计划文档
