@@ -1,21 +1,50 @@
-import { Link, NavLink } from "react-router-dom";
+import { Icons } from "./icons";
+import { TABS, type TabName } from "../data/nav";
 
-const items = ["接入方案", "API 参考", "最佳实践", "更新日志", "支持与帮助"];
+type Props = { primaryTab: TabName; onNav: (tab: TabName) => void };
 
-export function SiteHeader() {
+export function SiteHeader({ primaryTab, onNav }: Props) {
   return (
     <header className="site-header">
-      <div className="container site-header__inner">
-        <Link to="/" className="site-header__brand">
-          收钱吧开发者
-        </Link>
-        <nav className="site-header__nav" aria-label="主导航">
-          {items.map((item) => (
-            <NavLink key={item} to="/" className="site-header__link">
-              {item}
-            </NavLink>
+      <div className="site-header-inner">
+        <div className="brand">
+          <div className="brand-mark">S</div>
+          <span>Shouqianba</span>
+          <span className="brand-divider" />
+          <span className="brand-sub">Docs</span>
+        </div>
+
+        <nav className="primary-nav" aria-label="Primary">
+          {TABS.map((t) => (
+            <a
+              key={t}
+              href="#"
+              className={t === primaryTab ? "is-active" : ""}
+              onClick={(e) => {
+                e.preventDefault();
+                onNav(t);
+              }}
+            >
+              {t}
+            </a>
           ))}
         </nav>
+
+        <div className="header-spacer" />
+
+        <div className="search-box" role="search">
+          <Icons.Search size={14} />
+          <span>搜索文档、API、错误码…</span>
+          <span className="kbd">⌘K</span>
+        </div>
+
+        <a className="console-link" href="#">
+          控制台
+          <Icons.ArrowUpRight size={13} />
+        </a>
+        <button className="icon-btn" aria-label="GitHub">
+          <Icons.Github size={16} />
+        </button>
       </div>
     </header>
   );

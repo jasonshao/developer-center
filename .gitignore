@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # Local brainstorming artifacts
 .superpowers/
+
+# Claude Code local worktrees / plugin state
+.claude/

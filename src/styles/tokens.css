@@ -1,16 +1,1 @@
-:root {
-  --bg: #fffaf6;
-  --surface: #ffffff;
-  --surface-soft: #fff7f1;
-  --border: #efd7c9;
-  --text: #35261d;
-  --text-soft: #6f5a4c;
-  --brand: #ef6b2e;
-  --brand-strong: #d9571e;
-  --brand-soft: #fff1e8;
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 12px;
-  --shadow: 0 18px 42px rgba(116, 62, 29, 0.08);
-  --max-width: 1200px;
-}
+/* Design tokens live in global.css :root. Kept for import compatibility. */
